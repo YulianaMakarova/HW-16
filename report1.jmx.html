@@ -1,0 +1,170 @@
+<!DOCTYPE HTML><html xmlns:jmeter="http://jmeter.apache.org/">
+   <title>Schematic view of Test Plan</title>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <style>
+ul.tree, ul.tree ul {
+    list-style-type: none;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAKAQMAAABPHKYJAAAAA1BMVEWIiIhYZW6zAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH1ggGExMZBky19AAAAAtJREFUCNdjYMAEAAAUAAHlhrBKAAAAAElFTkSuQmCC') repeat-y;
+    margin: 0;
+    padding: 0;
+}
+ul.tree ul {
+    margin-left: 10px;
+}
+ul.tree li {
+    margin: 0;
+    padding: 0 12px;
+    line-height: 20px;
+    background:  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAUAQMAAACK1e4oAAAABlBMVEUAAwCIiIgd2JB2AAAAAXRSTlMAQObYZgAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9YIBhQIJYVaFGwAAAARSURBVAjXY2hgQIf/GTDFGgDSkwqATqpCHAAAAABJRU5ErkJggg==') no-repeat;
+    color: #369;
+}
+ul.tree li:last-child {
+    background: #fff url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAUAQMAAACK1e4oAAAABlBMVEUAAwCIiIgd2JB2AAAAAXRSTlMAQObYZgAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9YIBhQIIhs+gc8AAAAQSURBVAjXY2hgQIf/GbAAAKCTBYBUjWvCAAAAAElFTkSuQmCC') no-repeat;
+}
+</style>
+   </head>
+   <body>
+      <ul class="tree" id="tree">
+         <li><b>load test </b>
+            "Test Plan" 
+            (globalVars:[],
+            executeTearDownThreadsOnShutdown: )
+            </li>
+         <li>
+            <ul>
+               <li><b>run</b>
+                  "HW 16. Knowledge check 2" 
+                  (
+                  threads: "",
+                  loops: "1",
+                  ramp-up: ""
+                  )
+                  </li>
+               <li>
+                  <ul>
+                     <li><b>add headers</b>
+                        "HTTP Header Manager" 
+                        (headers:[
+                        
+                        {""=
+                        ""
+                        ,
+                        {"Content-Type"=
+                        "application/json"
+                        ])
+                        </li>
+                     <li><b>handle cookies</b>
+                        "HTTP Cookie Manager" <del>(disabled)</del>&nbsp;
+                        
+                        (clearOnEachIteration: true,
+                        policy: "",
+                        cookies: [
+                        ])
+                        </li>
+                     <li><b>simulate browser cache</b>
+                        "HTTP Cache Manager" <del>(disabled)</del>&nbsp;
+                        
+                        (clearOnEachIteration: true,
+                        useCacheControlAndExpires: true,
+                        maxSize: 
+                        )
+                        </li>
+                     <li><b>globalVars</b>
+                        "User Defined Variables" 
+                        ([
+                        "url"
+                        =
+                        "http://localhost:3001"
+                        ])
+                        </li>
+                     <li><b>http request</b>
+                        "Get All characters" 
+                        (method: "GET",
+                        url: "
+                        ://:/${url}/characters",
+                        
+                        body: [
+                        
+                        ]
+                        ,
+                        upload-files: [
+                        
+                        ]
+                        )
+                        </li>
+                     <li><b>http request</b>
+                        "Get character by Id" 
+                        (method: "GET",
+                        url: "
+                        ://:/${url}/character/2",
+                        
+                        body: [
+                        
+                        ]
+                        ,
+                        upload-files: [
+                        
+                        ]
+                        )
+                        </li>
+                     <li><b>http request</b>
+                        "Create new character" 
+                        (method: "POST",
+                        url: "
+                        ://:/${url}/character",
+                        
+                        body: "{&#xD;
+                        "name":"${__RandomString(10,abcdefghijklmnopqrstuvwxyz1234567890,)}",&#xD;
+                        "age":"35"&#xD;
+                        }"
+                        ,
+                        upload-files: [
+                        
+                        ]
+                        )
+                        </li>
+                     <li><b>http request</b>
+                        "Update character" 
+                        (method: "PUT",
+                        url: "
+                        ://:/${url}/character/8",
+                        
+                        body: "{&#xD;
+                        "name":"${__RandomString(10,abcdefghijklmnopqrstuvwxyz1234567890,)}",&#xD;
+                        "age":"28"&#xD;
+                        }"
+                        ,
+                        upload-files: [
+                        
+                        ]
+                        )
+                        </li>
+                     <li><b>http request</b>
+                        "Delete character" 
+                        (method: "DELETE",
+                        url: "
+                        ://:/${url}/character/4",
+                        
+                        body: [
+                        
+                        ]
+                        ,
+                        upload-files: [
+                        
+                        ]
+                        )
+                        </li>
+                     <li><b>write samples</b>
+                        "View Results Tree" </li>
+                     <li><b>write samples</b>
+                        "Aggregate Report" </li>
+                     <li><b>write samples</b>
+                        "Graph Results" </li>
+                  </ul>
+               </li>
+            </ul>
+         </li>
+      </ul>
+   </body>
+</html>
